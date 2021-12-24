@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
                   Get.to(() => const ProductScreen());
                 },
                 child: const Card(
-                  child: Text("Go To Products"),
+                  child: Center(child: Text("Go To Products")),
                 ),
               ),
             ),
