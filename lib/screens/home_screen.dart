@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: InkWell(
                 onTap: (){
-                  Get.to(() => const ProductScreen());
+                  Get.to(() =>   ProductScreen());
                 },
                 child: const Card(
                   child: Center(child: Text("Go To Products")),

@@ -10,10 +10,10 @@ class Product extends Equatable {
   final String imageUrl;
   final bool isRecommended;
   final bool isPopular;
-  final double price;
-  final double quantity;
+  double price;
+  int quantity;
 
-  const Product(
+   Product(
       {required this.id,
       required this.name,
       required this.category,
@@ -46,7 +46,7 @@ class Product extends Equatable {
       bool? isRecommended,
       bool? isPopular,
       double? price,
-      double? quantity}) {
+      int? quantity}) {
     return Product(
         id: id ?? this.id,
         name: name ?? this.name,
@@ -96,7 +96,7 @@ class Product extends Equatable {
 
 
   static List<Product> products = [
-    const  Product(
+       Product(
         name: 'pepsi',
         description: "loram ip some         sh.com/photo-1553 lfHx",
         category: 'pepsi',
@@ -106,7 +106,7 @@ class Product extends Equatable {
         isRecommended: true,
         isPopular: false, id: 1,),
 
-    const  Product(
+       Product(
       name: 'pepsi',
       description: "loram ip some         sh.com/photo-1553 lfHx",
       category: 'pepsi',
@@ -116,7 +116,7 @@ class Product extends Equatable {
       isRecommended: true,
       isPopular: false, id: 1,),
 
-    const  Product(
+       Product(
       name: 'pepsi 3',
       description: "loram ip some  htsdf",
       category: 'pepsi',

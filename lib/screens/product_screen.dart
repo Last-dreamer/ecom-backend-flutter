@@ -1,10 +1,13 @@
+import 'package:ecom_admin/controller/product_controller.dart';
 import 'package:ecom_admin/models/product_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:get/get.dart';
 
 class ProductScreen extends StatelessWidget {
-  const ProductScreen({Key? key}) : super(key: key);
+    ProductScreen({Key? key}) : super(key: key);
 
+  ProductController productController = Get.put(ProductController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -16,15 +19,15 @@ class ProductScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
-            Expanded(
-              child: ListView.builder(
-                  itemCount: Product.products.length,
-                  itemBuilder: (context, index) {
-                    return SizedBox(
-                      height: 195,
-                        child: ProductCart(product: Product.products[index]));
-                  }),
-            ),
+           Obx(() =>  Expanded(
+      child: ListView.builder(
+      itemCount: productController.products.length,
+          itemBuilder: (context, index) {
+            return SizedBox(
+                height: 195,
+                child: ProductCart(product: productController.products[index], index: index,));
+          }),
+    ),)
 
 
           ],
@@ -36,8 +39,12 @@ class ProductScreen extends StatelessWidget {
 
 class ProductCart extends StatelessWidget {
   final Product product;
+  final int index;
 
-  const ProductCart({Key? key, required this.product}) : super(key: key);
+  ProductCart({Key? key, required this.product, required this.index}) : super(key: key);
+
+  ProductController productController = Get.find();
+
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +91,9 @@ class ProductCart extends StatelessWidget {
                                 divisions: 10,
                                 activeColor: Colors.black,
                                 inactiveColor: Colors.black26,
-                                onChanged: (value){}),
+                                onChanged: (value){
+                                productController.updateProductPrice(index, product, value);
+                                }),
                           ),
                           Text("\$${product.price.toStringAsFixed(1)}", style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                         ],
@@ -105,7 +114,9 @@ class ProductCart extends StatelessWidget {
                                 divisions: 10,
                                 activeColor: Colors.black,
                                 inactiveColor: Colors.black26,
-                                onChanged: (value){}),
+                                onChanged: (value){
+                                productController.updateProductQuantity(index, product, value.toInt());
+                                }),
                           ),
                           Text("\$${product.quantity.toInt()}", style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                         ],
