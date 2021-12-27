@@ -1,5 +1,7 @@
 import 'package:ecom_admin/controller/product_controller.dart';
 import 'package:ecom_admin/models/product_model.dart';
+import 'package:ecom_admin/screens/new_product_screen.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:get/get.dart';
@@ -19,6 +21,24 @@ class ProductScreen extends StatelessWidget {
         padding: const EdgeInsets.all(10.0),
         child: Column(
           children: [
+
+            SizedBox(
+              height: 100,
+              child: Card(
+                color: Colors.black,
+                child:  Row(
+                  children: [
+                    IconButton(
+                        onPressed: (){
+                          Get.to(() => const NewPrdouctScreen());
+                        },
+                      icon: const Icon(Icons.add, color: Colors.white,),
+                    ),
+                    const Text("Add a new product", style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.white),),
+                  ],
+                ),
+              ),
+            ),
            Obx(() =>  Expanded(
       child: ListView.builder(
       itemCount: productController.products.length,
