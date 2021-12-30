@@ -30,7 +30,7 @@ class ProductScreen extends StatelessWidget {
                   children: [
                     IconButton(
                         onPressed: (){
-                          Get.to(() => const NewPrdouctScreen());
+                          Get.to(() =>   NewPrdouctScreen());
                         },
                       icon: const Icon(Icons.add, color: Colors.white,),
                     ),
