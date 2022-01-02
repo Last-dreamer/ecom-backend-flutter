@@ -113,7 +113,12 @@ class ProductCart extends StatelessWidget {
                                 inactiveColor: Colors.black26,
                                 onChanged: (value){
                                 productController.updateProductPrice(index, product, value);
-                                }),
+                                },
+                              onChangeEnd: (newValue){
+                                productController.saveNewProductPrice(product, "price", newValue);
+                              },
+
+                                ),
                           ),
                           Text("\$${product.price.toStringAsFixed(1)}", style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                         ],
@@ -136,7 +141,11 @@ class ProductCart extends StatelessWidget {
                                 inactiveColor: Colors.black26,
                                 onChanged: (value){
                                 productController.updateProductQuantity(index, product, value.toInt());
-                                }),
+                                },
+                              onChangeEnd: (newValue){
+                                productController.saveNewProductQuantity(product, "quantity", newValue.toInt());
+                              },
+                            ),
                           ),
                           Text("\$${product.quantity.toInt()}", style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
                         ],
