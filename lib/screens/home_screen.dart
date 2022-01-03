@@ -1,3 +1,4 @@
+import 'package:ecom_admin/screens/order_screen.dart';
 import 'package:ecom_admin/screens/product_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -26,6 +27,19 @@ class HomeScreen extends StatelessWidget {
                 },
                 child: const Card(
                   child: Center(child: Text("Go To Products")),
+                ),
+              ),
+            ),
+            Container(
+              width: double.infinity,
+              height: 150,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: InkWell(
+                onTap: (){
+                  Get.to(() =>  OrderScreen());
+                },
+                child: const Card(
+                  child: Center(child: Text("Go To Order")),
                 ),
               ),
             ),

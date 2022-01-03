@@ -14,7 +14,7 @@ class Product extends Equatable {
   double price;
   int quantity;
 
-   Product(
+  Product(
       {required this.id,
       required this.name,
       required this.category,
@@ -89,42 +89,44 @@ class Product extends Equatable {
 
   String toJson() => json.encode(toMap());
 
-
   @override
   bool get stringify => true;
 
-
   static List<Product> products = [
-       Product(
-        name: 'pepsi',
-        description: "loram ip some         sh.com/photo-1553 lfHx",
-        category: 'pepsi',
-        imageUrl:
-        "https://images.unsplash.com/photo-1553456558-aff63285bdd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-        price: 10,
-        isRecommended: true,
-        isPopular: false, id: 1,),
-
-       Product(
+    Product(
       name: 'pepsi',
-      description: "loram ip some         sh.com/photo-1553 lfHx",
+      description:
+          "loram ip some sh.com/photo-1553 lfHx loram ip some sh.com/photo-1553 lfHx",
       category: 'pepsi',
       imageUrl:
-      "https://images.unsplash.com/photo-1553456558-aff63285bdd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+          "https://images.unsplash.com/photo-1553456558-aff63285bdd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
       price: 10,
       isRecommended: true,
-      isPopular: false, id: 1,),
-
-       Product(
+      isPopular: false,
+      id: 1,
+    ),
+    Product(
+      name: 'pepsi',
+      description:
+          "loram ip someloram ip some sh.com/photo-1553 lfHxsh.com/photo-1553 lfHx",
+      category: 'pepsi',
+      imageUrl:
+          "https://images.unsplash.com/photo-1553456558-aff63285bdd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+      price: 10,
+      isRecommended: true,
+      isPopular: false,
+      id: 1,
+    ),
+    Product(
       name: 'pepsi 3',
-      description: "loram ip some  htsdf",
+      description: "loram ip some  htsdfloram ip some sh.com/photo-1553 lfHx",
       category: 'pepsi',
       imageUrl:
-      "https://images.unsplash.com/photo-1553456558-aff63285bdd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+          "https://images.unsplash.com/photo-1553456558-aff63285bdd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
       price: 10,
       isRecommended: true,
-      isPopular: false, id: 3,),
-
+      isPopular: false,
+      id: 3,
+    ),
   ];
-
 }

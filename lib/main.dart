@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ecom_admin/screens/home_screen.dart';
 import 'package:ecom_admin/screens/new_product_screen.dart';
+import 'package:ecom_admin/screens/order_screen.dart';
 import 'package:ecom_admin/screens/product_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       getPages: [
         GetPage(name: "/products", page: () => ProductScreen()),
         GetPage(name: "/products/new", page: () =>   NewPrdouctScreen()),
+        GetPage(name: "/order", page: () =>   OrderScreen()),
       ],
     );
   }
